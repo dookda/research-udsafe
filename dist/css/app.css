@@ -1,0 +1,66 @@
+/* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: 'Kanit-Regular';
+    src: url('./fonts/Kanit-Regular.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Kanit-Bold';
+    src: url('./fonts/Kanit-Bold.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Kanit-SemiBold';
+    src: url('./fonts/Kanit-SemiBold.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Kanit-Light';
+    src: url('./fonts/Kanit-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+body {
+    /*font-family: 'Prompt', sans-serif;*/
+    font-family: 'Kanit-Light', sans-serif !important;
+}
+h1 {
+  font-family: 'Kanit-Regular', sans-serif; 
+}
+h2 {
+  font-family: 'Kanit-SemiBold', sans-serif; 
+}
+h3 {
+  font-family: 'Kanit-Regular', sans-serif; 
+}
+h4 {
+  font-family: 'Kanit-Regular', sans-serif; 
+}
+h5 {
+  font-family: 'Kanit-Regular', sans-serif; 
+}
+h6 {
+  font-family: 'Kanit-Regular', sans-serif; 
+}
+.SemiBold{
+    font-family: 'Kanit-SemiBold', sans-serif; 
+    color: #606060;
+}
+.Bold{
+    font-family: 'Kanit-Bold', sans-serif; 
+    color: #606060;
+}
+.map{
+    padding: 0;
+}
+.echarts{
+    padding: 0px;
+    height: 300px;
+}
+.navbar-custom {
+    border: none;
+    border-radius: 0;
+    /*background-color: #AAB2BD;*/
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 10px;
+}

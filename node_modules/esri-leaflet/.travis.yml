@@ -1,0 +1,14 @@
+language: node_js
+sudo: false
+notifications:
+  email: false
+node_js:
+  - "6"
+cache:
+  directories: # Cache dependencies
+    - node_modules
+    - travis_phantomjs
+before_script:
+  - npm prune
+before_install:
+  - npm i -g npm@^4.0.0
