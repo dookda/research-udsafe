@@ -2,30 +2,45 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
 
     .controller('dashboardCtrl', function ($scope, rainService) {
 
-        // map
 
-        $scope.center = rainService.selectedLocation;
-
-
-        if ($scope.center.lat == null) {
-            //console.log('yess null');
-            var center = {
+        var center = {
                 lat: 17.700,
                 lng: 100.560,
                 zoom: 9
-            }
-        } else {
-            var center = {
-                lat: Number($scope.center.lat),
-                lng: Number($scope.center.lng),
+            };
+        //$scope.dat = { lat: '', lng: ''};
+        $scope.goMap = function (lat, lng) {
+           $scope.center = {
+                lat: Number(lat),
+                lng: Number(lng),
                 zoom: 15
             };
-            //console.log($scope.center.lat + '-' + $scope.center.lng);
-        }
+            //rainService.selectedLocation = $scope.center; 
+            console.log($scope.center.lat+'-'+$scope.center.lng);
+        };
 
+        //$scope.center = rainService.selectedLocation;
+
+
+        // if ($scope.center.lat == null) {
+        //     //console.log('yess null');
+        //     var center = {
+        //         lat: 17.700,
+        //         lng: 100.560,
+        //         zoom: 9
+        //     }
+        // } else {
+        //     var center = {
+        //         lat: Number($scope.center.lat),
+        //         lng: Number($scope.center.lng),
+        //         zoom: 15
+        //     };
+        // }
+
+        console.log(center.lat + '-' + center.lng);
 
         angular.extend($scope, {
-            center: center,
+            center:center,
             markers: {
                 taipei: {
                     lat: 25.0391667,
@@ -186,11 +201,6 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
         $scope.reload = function () {
             location.reload();
         };
-        //$scope.dat = { lat: '', lng: ''};
-        $scope.goMap = function (lat, lng) {
-            $scope.dat = { lat: lat, lng: lng };
-            rainService.selectedLocation = $scope.dat; 
-            console.log(lat+'-'+lng);
-        };
+        
 
     })
