@@ -264,10 +264,10 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                     console.log(res.data);
 
                     // refesh layer
-                    // $timeout(function() {
-                    //     $scope.getJson();
-                    //     console.log('refreshed');
-                    // }, 400);
+                    $timeout(function() {
+                         $scope.getClear();
+                         console.log('refreshed');
+                    }, 400);
                 });
         };
 
@@ -278,7 +278,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                 tam: '',
                 vill: '',
                 moo: '',
-                mcode: ''
+                rain: ''
 
             };
         };
