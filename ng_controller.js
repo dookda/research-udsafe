@@ -256,7 +256,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                 date: $scope.dat.date
             };
 
-            var link = 'http://localhost/udsafe/insert2db.php';
+            var link = 'http://cgi.uru.ac.th/udsafe/insert2db.php';
             //$http.post(link, {username : $scope.data.farmer_fname})
             $http.post(link, $scope.selectedData)
                 .then(function(res) {
@@ -277,7 +277,9 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                 amp: '',
                 tam: '',
                 vill: '',
-                moo: ''
+                moo: '',
+                mcode: ''
+
             };
         };
 
