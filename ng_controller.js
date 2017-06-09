@@ -205,7 +205,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
 
     })
 
-    .controller('rainformCtrl', function ($scope,  $http, rformService) {
+    .controller('rainformCtrl', function ($scope,  $http, $timeout, rformService) {
 
 
         $scope.getAmp = function () {
