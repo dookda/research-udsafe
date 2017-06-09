@@ -22,7 +22,7 @@ if (isset($postdata)) {
 
 
 
-   $sql = "INSERT INTO rain_community (mcode, rain, raindate) VALUES ( $mcode, $rain, '$date')";
+   $sql = "INSERT INTO rain_community (station_id, rain, raindate) VALUES ( $mcode, $rain, '$date')";
 	
     
     pg_query($sql);
