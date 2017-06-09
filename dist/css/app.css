@@ -64,3 +64,7 @@ h6 {
     font-size: 12px;
     margin-bottom: 10px;
 }
+.navbar-custom .navbar-brand{
+    width: 350px;
+    overflow: hidden;
+}

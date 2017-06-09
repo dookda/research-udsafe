@@ -1,0 +1,53 @@
+<div class="panel-body">
+    <div class="content-row">
+
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label>อำเภอ: </label>
+                        <select class="form-control" ng-model="dat.amp" ng-options="a.amp_name for a in amp" ng-change="getTam(); " ng-required="true">
+                                <option value=""> </option>
+                            </select>
+                        <label>ตำบล: </label>
+                        <select class="form-control" ng-model="dat.tam" ng-options="t.tam_name for t in tam" ng-change="getVill(); " ng-required="true">
+                                <option value=""> </option>
+                            </select>
+                        <label>หมู่บ้าน: </label>
+                        <select class="form-control" ng-model="dat.vill" ng-options="v.village for v in vill" ng-change="getMoo();" ng-required="true">
+                                <option value=""> </option>
+                            </select>
+
+                        <label>หมู่ที่: </label>
+                        <select class="form-control" ng-model="dat.moo" ng-options="m.mcode as m.moo for m in moo" ng-change="" ng-required="true">
+                                <option value=""> </option>
+                            </select>
+                        
+                        <div class="form-group">
+                            <label><strong>ปริมาณน้ำฝน (มม.):</strong> </label>
+                            <input type="number" class="form-control" ng-model="dat.rain" ng-required="true" />
+                        </div>
+
+                        <div class="form-group">
+                            <label><strong>วันรายงาน:</strong> </label>
+                            <input type="date" class="form-control" ng-model="dat.date" ng-required="true" />
+                        </div>
+
+
+                    </div>
+                    <button class="btn btn-success" type="submit" ng-click="insertData();"><i class="icon-plus-sign icon-white"></i> ตกลง</button><span>  </span>
+                    <button class="btn btn-danger" type="submit" ng-click="getClear();"><i class="icon-minus-sign icon-white"></i> ยกเลิก</button>
+
+                    <!--  <p>{{dat.prov.length}} {{dat.amp}} {{dat.tam}} {{dat.vill}}</p> -->
+                </form>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</div>

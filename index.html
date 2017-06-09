@@ -3,22 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Bootflat-Admin Template</title>
+    <title>เตือนภัยอุตรดิตถ์</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="favicon_16.ico" />
     <link rel="bookmark" href="favicon_16.ico" />
     <!-- site css -->
     <link rel="stylesheet" href="dist/css/site.min.css">
     <link rel="stylesheet" href="dist/css/app.css">
-    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
-    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
     <script type="text/javascript" src="dist/js/site.min.js"></script>
-
     <!--leaflet-ui-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
@@ -35,7 +27,7 @@
     <script src="node_modules/leaflet/dist/leaflet.js"></script>
     <script src="node_modules/ui-leaflet/dist/ui-leaflet.min.js"></script>
     <!--<script src="node_modules/ui-leaflet-layers/dist/ui-leaflet-layers.min.js"></script>-->
-    <script src="node_modules/esri-leaflet/dist/esri-leaflet.js"></script>  
+    <script src="node_modules/esri-leaflet/dist/esri-leaflet.js"></script>
 
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
 
@@ -57,16 +49,16 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-                <a href="#" class="navbar-brand">Bootflat-Admin</a>
+                <a href="#" class="navbar-brand">เว็บแผนที่เตือนภัยจังหวัดอุตรดิตถ์</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="bs-content-row-navbar-collapse-5" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="getting-started.html">Getting Started</a></li>
-                    <li class="active"><a href="index.html">Documentation</a></li>
+                    <li class="active"><a href="index.html">คู่มือการใช้งาน</a></li>
                     <!-- <li class="disabled"><a href="#">Link</a></li> -->
-                    <li class="dropdown">
+                    <!--<li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Silverbux <b class="caret"></b></a>
                         <ul role="menu" class="dropdown-menu">
                             <li class="dropdown-header">Setting</li>
@@ -76,7 +68,7 @@
                             <li class="divider"></li>
                             <li class="disabled"><a href="#">Signout</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
 
             </div>
@@ -92,8 +84,12 @@
                 <ul class="list-group panel">
                     <li class="list-group-item"><i class="glyphicon glyphicon-align-justify"></i> <b>SIDE PANEL</b></li>
                     <li class="list-group-item"><input type="text" class="form-control search-query" placeholder="Search Something"></li>
-                    <li class="list-group-item"><a href='#!/dashboard'><i class="glyphicon glyphicon-home"></i>Dashboard </a></li>
-                    <li class="list-group-item"><a href="icons.html"><i class="glyphicon glyphicon-certificate"></i>Icons </a></li>
+                    <li class="list-group-item"><a href='index.html#!/dashboard'><i class="glyphicon glyphicon-home"></i>หน้าหลัก </a></li>
+                    <li class="list-group-item"><a href='index.html#!/rainform'><i class="glyphicon glyphicon-home"></i>กรอกข้อมูลน้ำฝน </a></li>
+                    <li class="list-group-item"><a href='index.html#!/landslide'><i class="glyphicon glyphicon-home"></i>ดินโคลนถล่ม </a></li>
+                    <li class="list-group-item"><a href='index.html#!/drought'><i class="glyphicon glyphicon-home"></i>ภัยแล้ง </a></li>
+                    <li class="list-group-item"><a href='index.html#!/fire'><i class="glyphicon glyphicon-home"></i>ไฟป่า </a></li>
+                    <!--<li class="list-group-item"><a href="icons.html"><i class="glyphicon glyphicon-certificate"></i>Icons </a></li>
                     <li class="list-group-item"><a href="list.html"><i class="glyphicon glyphicon-th-list"></i>Tables and List </a></li>
                     <li class="list-group-item"><a href="forms.html"><i class="glyphicon glyphicon-list-alt"></i>Forms</a></li>
                     <li class="list-group-item"><a href="alerts.html"><i class="glyphicon glyphicon-bell"></i>Alerts</li>
@@ -113,7 +109,7 @@
                             <a href="" class="list-group-item">Subitem 2</a>
                             <a href="" class="list-group-item">Subitem 3</a>
                         </li>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-9 content">
@@ -129,20 +125,7 @@
             </div>
             <!-- content -->
         </div>
-        <!--footer-->
-        <div class="site-footer">
-            <div class="container">
-                <div class="copyright clearfix">
-                    <p><b>Bootflat</b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="getting-started.html">Getting Started</a>&nbsp;&bull;&nbsp;
-                        <a href="index.html">Documentation</a>&nbsp;&bull;&nbsp;<a href="https://github.com/Bootflat/Bootflat.UI.Kit.PSD/archive/master.zip">Free PSD</a>&nbsp;&bull;&nbsp;
-                        <a href="colors.html">Color Picker</a>
-                    </p>
-                    <p>Code licensed under <a href="http://opensource.org/licenses/mit-license.html" target="_blank" rel="external nofollow">MIT License</a>,
-                        documentation under <a href="http://creativecommons.org/licenses/by/3.0/" rel="external nofollow">CC BY 3.0</a>.</p>
-                </div>
-            </div>
-        </div>
-
     </div>
+    <!--footer-->
 </body>
 </html>
