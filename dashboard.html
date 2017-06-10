@@ -48,10 +48,10 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
+                                    <th>สถานี</th>
+                                    <th>สถานที่</th>
+                                    <th>ปริมาณน้ำฝน (มม.)</th>
+                                    <th>แหล่งข้อมูล</th>
                                     <th>map</th>
                                 </tr>
                             </thead>
@@ -60,7 +60,7 @@
                                     <td>{{ r.sta_id }}</td>
                                     <td>{{ r.sta_name }}</td>
                                     <td>{{ r.rain_mm}}</td>
-                                    <td>{{ r.source }}</td>
+                                    <td>{{ r.sta_source }}</td>
                                     <td class="text-center" colspan="2">
                                         <a class='glyphicon glyphicon-zoom-in' data-toggle='tooltip' title='Zoom' ng-click="goMap(r.lat, r.lon);" >
                          <i class='icon-zoom-in'></i>
