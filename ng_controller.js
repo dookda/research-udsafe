@@ -185,7 +185,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                     $scope.rainData = response.data;
                     $scope.length = response.data.length;
                     //$scope.length = response.data.length;
-                    console.log($scope.length);
+                    //console.log($scope.length);
                     $scope.totalItems = $scope.length;
                     $scope.currentPage = 1;
                     $scope.numPerPage = 10;
@@ -270,7 +270,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                     // refesh layer
                     $timeout(function() {
                          $scope.getClear();
-                         console.log('refreshed');
+                         //console.log('refreshed');
                     }, 400);
                 });
         };
