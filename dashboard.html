@@ -1,85 +1,87 @@
 <div class="panel-body">
 
-
-
-    <!-- Thumbnails rain in ud -->
-    <div class="content-row">
-        <!--<h2 class="content-row-title">da</h2>-->
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail alert alert-info">
-                        <h4>ปริมาณฝนวันนี้</h4>
-                        <p>ปริมาณน้ำฝนเฉลี่ยทั้งจังหวัด {{ rainAvg[0].rain_stat | number:2 }} มม.</p>
-                        <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail alert alert-info">
-                        <h4>ระดับน้ำ</h4>
-                        <p>ปริมาณน้ำฝนเฉลี่ยทั้งจังหวัด {{ rainAvg[0].rain_stat | number:2 }} มม.</p>
-                        <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail alert alert-info">
-                        <h4>ภัยแล้ง</h4>
-                        <p>ปริมาณน้ำฝนเฉลี่ยทั้งจังหวัด {{ rainAvg[0].rain_stat | number:2 }} มม.</p>
-                        <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail alert-danger">
-                        <h4>ไฟป่า</h4>
-                        <p>ปริมาณน้ำฝนเฉลี่ยทั้งจังหวัด {{ rainAvg[0].rain_stat | number:2 }} มม.</p>
-                        <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Jumbotron -->
     <div class="content-row">
         <h2 class="content-row-title">สถานการณ์น้ำฝน</h2>
         <div class="row">
 
             <div class="col-md-4">
-                <div class="jumbotron">
-                    <div class="bs-example">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>สถานี</th>
-                                    <th>สถานที่</th>
-                                    <th>ปริมาณน้ำฝน (มม.)</th>
-                                    <th>แหล่งข้อมูล</th>
-                                    <th>map</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="r in rainData | filter : paginate">
-                                    <td>{{ r.sta_id }}</td>
-                                    <td>{{ r.sta_name }}</td>
-                                    <td>{{ r.rain_mm}}</td>
-                                    <td>{{ r.sta_source }}</td>
-                                    <td class="text-center" colspan="2">
-                                        <a class='glyphicon glyphicon-zoom-in' data-toggle='tooltip' title='Zoom' ng-click="goMap(r.lat, r.lon);" >
-                         <i class='icon-zoom-in'></i>
-                    </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="panel">
 
+                    <ul id="myTab1" class="nav nav-tabs nav-justified">
+                        <li><a href="#rainSum" data-toggle="tab">สถิติรายวัน</a></li>
+                        <li><a href="#rainTable" data-toggle="tab">ปริมาณน้ำฝนรายสถานี</a></li>
+                    </ul>
+
+                    <div id="myTabContent" class="tab-content">
+
+                        <div class="tab-pane fade active in" id="rainSum">
+
+                            <div class="thumbnail alert alert-info">
+                                <h4>ปริมาณฝนวันนี้</h4>
+                                <p>ปริมาณน้ำฝนเฉลี่ยทั้งจังหวัด {{ rainAvg[0].rain_stat | number:2 }} มม.</p>
+                                <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
+                            </div>
+
+                            <div class="thumbnail alert alert-info">
+                                <h4>ระดับน้ำ</h4>
+                                <p>ปริมาณน้ำฝนเฉลี่ยทั้งจังหวัด {{ rainAvg[0].rain_stat | number:2 }} มม.</p>
+                                <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
+                            </div>
+
+                            <div class="udiv_legende" id="legende_1">
+                                <h4>คำอธิบายสัญลักษณ์</h4>
+                                <p>ขอบเขตอำเภอ</br>
+                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=alr:ln9p_amp">
+                                 </p>
+                                <p>ขอบเขตตำบล</br>
+                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=alr:ln9p_tam">
+                                </p>
+                                ปริมาณน้ำฝน</br>
+                                <img src="http://cgi.uru.ac.th/gs-rain/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=rain:rain_now_report_ud">
+                               
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="rainTable">
+                            <div class="bs-example">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <!--<th>สถานี</th>-->
+                                            <th>สถานที่</th>
+                                            <th>น้ำฝน (มม.)</th>
+                                            <th>แหล่งข้อมูล</th>
+                                            <th>map</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="r in rainData | filter : paginate">
+                                            <!--<td>{{ r.sta_id }}</td>-->
+                                            <td>{{ r.sta_name }}</td>
+                                            <td>{{ r.rain_mm}}</td>
+                                            <td>{{ r.sta_source }}</td>
+                                            <td class="text-center" colspan="2">
+                                                <a class='glyphicon glyphicon-zoom-in' data-toggle='tooltip' title='Zoom' ng-click="goMap(r.lat, r.lon);">
+                                                    <i class='icon-zoom-in'></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;"
+                                    next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+                            </div>
+                        </div>
                     </div>
-                    <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;"
-                        next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
                 </div>
             </div>
 
             <div class="col-md-8">
                 <div class="jumbotron">
-                    <div style="padding: 0px;" id='content'>
-                        <leaflet lf-center="center" layers="layers" width="100%" height="700px"></leaflet>
+                    <div id='map'>
+                        <leaflet lf-center="center" layers="layers" height="580px" width="100%"></leaflet>
                     </div>
                 </div>
             </div>

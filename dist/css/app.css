@@ -19,6 +19,8 @@
     src: url('./fonts/Kanit-Light.ttf') format('truetype');
     font-weight: 300;
 }
+
+
 body {
     /*font-family: 'Prompt', sans-serif;*/
     font-family: 'Kanit-Light', sans-serif !important;
@@ -49,8 +51,10 @@ h6 {
     font-family: 'Kanit-Bold', sans-serif; 
     color: #606060;
 }
-.map{
+#map{
     padding: 0;
+    height: 100%;
+    width: 100%;
 }
 .echarts{
     padding: 0px;

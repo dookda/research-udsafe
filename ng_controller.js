@@ -111,6 +111,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_prov',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 3
                         }
                     },
@@ -123,6 +124,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_amp',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 4
                         }
                     },
@@ -135,6 +137,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_tam',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 5
                         }
                     },
@@ -147,6 +150,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_vill',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 6
                         }
                     }
@@ -343,6 +347,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_prov',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 3
                         }
                     },
@@ -355,6 +360,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_amp',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 4
                         }
                     },
@@ -367,6 +373,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_tam',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 5
                         }
                     },
@@ -379,6 +386,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_vill',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 6
                         }
                     }
@@ -442,6 +450,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_prov',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 3
                         }
                     },
@@ -454,6 +463,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_amp',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 4
                         }
                     },
@@ -466,6 +476,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_tam',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 5
                         }
                     },
@@ -478,6 +489,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_vill',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 6
                         }
                     }
@@ -554,6 +566,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_prov',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 3
                         }
                     },
@@ -566,6 +579,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_amp',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 4
                         }
                     },
@@ -578,6 +592,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_tam',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 5
                         }
                     },
@@ -590,6 +605,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                             layers: 'alr:ln9p_vill',
                             format: 'image/png',
                             transparent: true,
+                            CQL_FILTER: 'prov_code=53',
                             zIndex: 6
                         }
                     }
