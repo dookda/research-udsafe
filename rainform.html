@@ -1,8 +1,9 @@
 <div class="panel-body">
     <div class="content-row">
-
+        <div class="infos">
+            <h2 class="content-row-title">กรอกข้อมูลปริมาณน้ำฝนรายวัน</h2>
+        </div>
         <div class="panel panel-default">
-
             <div class="panel-body">
                 <form>
                     <div class="form-group">
@@ -23,7 +24,7 @@
                         <select class="form-control" ng-model="dat.moo" ng-options="m.station_id as m.moo for m in moo" ng-change="" ng-required="true">
                                 <option value=""> </option>
                             </select>
-                        
+
                         <div class="form-group">
                             <label><strong>ปริมาณน้ำฝน (มม.):</strong> </label>
                             <input type="number" class="form-control" ng-model="dat.rain" ng-required="true" />

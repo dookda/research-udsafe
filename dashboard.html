@@ -2,12 +2,13 @@
 
     <!-- Jumbotron -->
     <div class="content-row">
-        <h2 class="content-row-title">สถานการณ์น้ำฝน</h2>
+
         <div class="row">
-
             <div class="col-md-4">
+                <div class="infos">
+                    <h2 class="content-row-title">สถานการณ์น้ำฝน</h2>
+                </div>
                 <div class="panel">
-
                     <ul id="myTab1" class="nav nav-tabs nav-justified">
                         <li><a href="#rainSum" data-toggle="tab">สถิติรายวัน</a></li>
                         <li><a href="#rainTable" data-toggle="tab">มีฝน {{ length }} แห่ง</a></li>
@@ -29,18 +30,18 @@
                                 <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
                             </div>
 
-                        
+
                             <div class="infos">
-                              <h4>คำอธิบายสัญลักษณ์</h4>                                
-                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=alr:ln9p_amp">
-                                 ขอบเขตอำเภอ</br>
-                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=alr:ln9p_tam">
-                                ขอบเขตตำบล<br></br>
+                                <h4>คำอธิบายสัญลักษณ์</h4>
+                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=alr:ln9p_amp">                                ขอบเขตอำเภอ
+                                </br>
+                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=alr:ln9p_tam">                                ขอบเขตตำบล
+                                <br></br>
                                 ปริมาณน้ำฝน</br>
                                 <img src="http://cgi.uru.ac.th/gs-rain/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=rain:rain_now_report_ud">
-                               
+
                             </div>
-                      
+
 
 
 
