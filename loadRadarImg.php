@@ -9,7 +9,7 @@
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 	$response= curl_exec ($ch);
 	curl_close($ch);
-	$file_name = "radar_images/".$split_image['filename'].".".$split_image['extension'];
+	$file_name = "C:/Tomcat 9.0/webapps/gs-rain/data/data/rainradar/".$split_image['filename'].".".$split_image['extension'];
 	$file = fopen($file_name , 'w') or die("X_x");
 	fwrite($file, $response);
 	fclose($file);
