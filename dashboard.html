@@ -11,7 +11,7 @@
                 <div class="panel">
                     <ul id="myTab1" class="nav nav-tabs nav-justified">
                         <li><a href="#rainSum" data-toggle="tab">สถิติรายวัน</a></li>
-                        <li><a href="#rainTable" data-toggle="tab">มีฝน {{ length }} แห่ง</a></li>
+                        <li><a href="#rainTable" data-toggle="tab">มีฝน {{ Wfslength }} แห่ง</a></li>
                     </ul>
 
                     <div id="myTabContent" class="tab-content">
@@ -24,25 +24,24 @@
                                 <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
                             </div>
 
-                            <div class="thumbnail alert alert-info">
+                            <!--<div class="thumbnail alert alert-info">
                                 <h4>ระดับน้ำ</h4>
-                                <p>ปริมาณน้ำฝนเฉลี่ยทั้งจังหวัด {{ rainAvg[0].rain_stat | number:2 }} มม.</p>
-                                <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
-                            </div>
+                                <div ng-repeat="w in  rainWfs">{{ w.properties.sta_name }}</div>
+                                
+                                <p>ปริมาณน้ำฝนสูงสุด {{ Wfslength }} มม.</p>
+                            </div>-->
 
 
                             <div class="infos">
                                 <h4>คำอธิบายสัญลักษณ์</h4>
-                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=alr:ln9p_amp">                                ขอบเขตอำเภอ
+                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=alr:ln9p_amp">                                ขอบเขตอำเภอ
                                 </br>
-                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=alr:ln9p_tam">                                ขอบเขตตำบล
+                                <img src="http://map.nu.ac.th/gs-alr2/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=alr:ln9p_tam">                                ขอบเขตตำบล
                                 <br></br>
                                 ปริมาณน้ำฝน</br>
-                                <img src="http://cgi.uru.ac.th/gs-rain/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=12&HEIGHT=12&LAYER=rain:rain_now_report_ud">
+                                <img src="http://cgi.uru.ac.th/gs-rain/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=25&HEIGHT=25&LAYER=rain:rain_now_report_ud">
 
                             </div>
-
-
 
 
                         </div>
@@ -60,13 +59,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="r in rainData | filter : paginate">
+                                        <tr ng-repeat="r in  rainWfs | filter: paginate">
                                             <!--<td>{{ r.sta_id }}</td>-->
-                                            <td>{{ r.sta_name }}</td>
-                                            <td>{{ r.rain_mm}}</td>
-                                            <td>{{ r.sta_source }}</td>
+                                            <td>{{ r.properties.sta_name }}</td>
+                                            <td>{{ r.properties.rain_mm }}</td>
+                                            <td>{{ r.properties.sta_source }}</td>
                                             <td class="text-center" colspan="2">
-                                                <a class='glyphicon glyphicon-zoom-in' data-toggle='tooltip' title='Zoom' ng-click="goMap(r.lat, r.lon);">
+                                                <a class='glyphicon glyphicon-zoom-in' data-toggle='tooltip' title='Zoom' ng-click="goMap(r.properties.lat, r.properties.lon);">
                                                     <i class='icon-zoom-in'></i>
                                                 </a>
                                             </td>

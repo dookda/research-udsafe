@@ -8,27 +8,27 @@
                 </div>
                 <div class="thumbnail alert alert-info">
                     <h4>จำนวนจุดความร้อนที่พบวันนี้</h4>
-                    <p>ปริมาณน้ำฝนเฉลี่ยทั้งจังหวัด {{ rainAvg[0].rain_stat | number:2 }} มม.</p>
-                    <p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>
+                    <p>จำนวนจุดความร้อน {{ length | number:0 }} แห่ง</p>
+                    <!--<p>ปริมาณน้ำฝนสูงสุด {{ rainMax[0].rain_stat | number:2 }} มม.</p>-->
                 </div>
                 <div class="jumbotron">
                     <div class="bs-example">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>brightness 1</th>
+                                    <th>brightness 2</th>
+                                    <th>frp</th>
+                                    <th>ดาวเทียม</th>
                                     <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                    <th>map</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="r in rainData | filter : paginate">
-                                    <td>{{ r.sta_id }}</td>
-                                    <td>{{ r.sta_name }}</td>
-                                    <td>{{ r.rain_mm}}</td>
-                                    <td>{{ r.source }}</td>
+                                <tr ng-repeat="f in fireData | filter : paginate">
+                                    <td>{{ f.b1 }}</td>
+                                    <td>{{ f.b3 }}</td>
+                                    <td>{{ f.frp}}</td>
+                                    <td>{{ f.satellite }}</td>
                                     <td class="text-center" colspan="2">
                                         <a class='glyphicon glyphicon-zoom-in' data-toggle='tooltip' title='Zoom' ng-click="goMap(r.lat, r.lon);">
                          <i class='icon-zoom-in'></i>
@@ -41,6 +41,12 @@
                     </div>
                     <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;"
                         next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+                </div>
+                <div>
+                    b1: brightness temperature of fire pixel </br>
+                    b2: brightness temperature of fire pixel </br>
+                    frp: Fire radiative power </br>
+                    ดาวเทียม:  NOAA(N),Terra(T), Aqua(A)
                 </div>
             </div>
 

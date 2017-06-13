@@ -10,7 +10,14 @@ angular.module('app.service', [])
         getStat: function(stat) {
             var data = 'http://cgi.uru.ac.th/rain-api/index.php/rain_stat/'+stat;
             return $http.get(data);
-        }
+        },
+        getWfs: function(){
+            var wfs ='http://cgi.uru.ac.th/gs-rain/rain/ows?service=WFS&version=1.0.0';
+                wfs += '&request=GetFeature';
+                wfs += '&typeName=rain:rain_now_report_ud';
+                wfs += '&outputFormat=application%2Fjson';                    
+            return $http.get(wfs);
+    }
     }
 })
 
@@ -49,12 +56,12 @@ angular.module('app.service', [])
 .service('fireService', function($http) {
     return {
         selectedLocation: {},
-        getpoint: function() {
-            var data = 'http://cgi.uru.ac.th/rain-api/index.php/rain/ud';
+        getFireUd: function() {
+            var data = 'http://cgi.uru.ac.th/hotspot-api/index.php/hotspot/ud';
             return $http.get(data);
         },
-        getStat: function(stat) {
-            var data = 'http://cgi.uru.ac.th/rain-api/index.php/rain_stat/'+stat;
+        getFireTh: function(stat) {
+            var data = 'http://cgi.uru.ac.th/hotspot-api/index.php/hotspot/th';
             return $http.get(data);
         }
     }

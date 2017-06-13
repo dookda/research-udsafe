@@ -179,26 +179,37 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
         $scope.getStatMax('max');
 
         // load rain max
-        $scope.getRain = function () {
-            rainService.getRain()
+        // $scope.getRain = function () {
+        //     rainService.getRain()
+        //         .then(function (response) {
+        //             $scope.rainData = response.data;
+        //             $scope.length = response.data.length;
+        //             //$scope.length = response.data.length;
+        //             //console.log($scope.length);
+        //         })
+        // };
+        // $scope.getRain();
+
+
+        $scope.getWfs = function () {
+            rainService.getWfs()
                 .then(function (response) {
-                    $scope.rainData = response.data;
-                    $scope.length = response.data.length;
-                    //$scope.length = response.data.length;
-                    //console.log($scope.length);
-                    $scope.totalItems = $scope.length;
+                    $scope.rainWfs = response.data.features;
+                    $scope.Wfslength = response.data.totalFeatures;
+                    $scope.totalItems = $scope.Wfslength;
                     $scope.currentPage = 1;
                     $scope.numPerPage = 10;
                 })
         };
-        $scope.getRain();
+        $scope.getWfs();
 
 
         $scope.paginate = function (value) {
             var begin, end, index;
             begin = ($scope.currentPage - 1) * $scope.numPerPage;
             end = begin + $scope.numPerPage;
-            index = $scope.rainData.indexOf(value);
+            index = $scope.rainWfs.indexOf(value);
+            //console.log($scope.rainWfs.indexOf(value));
             return (begin <= index && index < end);
         }
 
@@ -499,7 +510,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
         });
     })
 
-    .controller('fireCtrl', function ($scope, rainService) {
+    .controller('fireCtrl', function ($scope, fireService) {
 
         var center = {
             lat: 17.700,
@@ -613,5 +624,52 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                 }
             }
         });
+
+        // load rain avg
+        $scope.getStatAvg = function (avg) {
+            fireService.getStat(avg)
+                .then(function (response) {
+                    $scope.rainAvg = response.data;
+                    //console.log(response.data);
+                })
+        };
+        //$scope.getStatAvg('avg');
+
+        // load rain max
+        $scope.getStatMax = function (max) {
+            fireService.getStat(max)
+                .then(function (response) {
+                    $scope.rainMax = response.data;
+                })
+        };
+        //$scope.getStatMax('max');
+
+        // load rain max
+        $scope.getFireUd = function () {
+            fireService.getFireUd()
+                .then(function (response) {
+                    $scope.fireData = response.data;
+                    $scope.length = response.data.length;
+                    //$scope.length = response.data.length;
+                    //console.log($scope.length);
+                    $scope.totalItems = $scope.length;
+                    $scope.currentPage = 1;
+                    $scope.numPerPage = 10;
+                })
+        };
+        $scope.getFireUd();
+
+
+        $scope.paginate = function (value) {
+            var begin, end, index;
+            begin = ($scope.currentPage - 1) * $scope.numPerPage;
+            end = begin + $scope.numPerPage;
+            index = $scope.fireData.indexOf(value);
+            return (begin <= index && index < end);
+        }
+
+        $scope.reload = function () {
+            location.reload();
+        };
 
     })
