@@ -1,6 +1,6 @@
 angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
 
-    .controller('dashboardCtrl', function ($scope, rainService) {
+    .controller('dashboardCtrl', function ($scope, $http, rainService) {
 
 
         var center = {
@@ -78,6 +78,18 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                 },
                 overlays: {
 
+                    rainradar: {
+                        name: 'ข้อมูลฝนจาก Radar',
+                        type: 'wms',
+                        visible: false,
+                        url: 'http://cgi.uru.ac.th/gs-rain/ows?',
+                        layerParams: {
+                            layers: 'rain:phs240_latest',
+                            format: 'image/png',
+                            transparent: true,
+                            zIndex: 2
+                        }
+                    },
                     rainnow: {
                         name: 'ตำแหน่งวัดปริมาณน้ำฝนรายวัน',
                         type: 'wms',
@@ -158,6 +170,18 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                 }
             }
         });
+        
+        // load Radar image 
+        $scope.loadRadarImg = function() {
+            var link = 'http://cgi.uru.ac.th/udsafe/loadRadarImg.php';
+            //$http.post(link, {username : $scope.data.farmer_fname})
+            $http.post(link)
+                .then(function(res) {
+                    $scope.response = res.data;
+                    console.log(res.data);
+                });
+        };
+        $scope.loadRadarImg();
 
         // load rain avg
         $scope.getStatAvg = function (avg) {
