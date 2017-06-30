@@ -86,6 +86,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                     cri: {
                         name: 'ข้อมูลฝนจาก Radar: เชียงราย',
                         type: 'imageOverlay',
+                        visible: true,
                         url: 'http://rain.tvis.in.th/output/CRI.png',
                         bounds: [[22.305437,102.143387], [17.596297,97.611690]],
                         //bounds: imageBounds,
@@ -106,6 +107,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                     pl: {
                         name: 'ข้อมูลฝนจาก Radar: พิษณุโลก',
                         type: 'imageOverlay',
+                        visible: true,
                         url: 'http://rain.tvis.in.th/output/PHS.png',
                         bounds: [[19.094393,102.475537], [14.411350,97.983591]],
                         //bounds: imageBounds,
