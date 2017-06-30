@@ -39,6 +39,12 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
 
         console.log(center.lat + '-' + center.lng);
 
+
+
+        var latlng_topright = '["15.09352819610486,101.7458188486135",  "18.793550,105.026265", "19.094393,102.475537", "22.305437,102.143387"]';
+        var latlng_bottomleft = '["12.38196058009694,98.97206140040996","14.116192,100.541459", "14.411350,97.983591",  "17.596297,97.611690"]';
+          
+      
         angular.extend($scope, {
             center: center,
             markers: {
@@ -77,19 +83,58 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                     }
                 },
                 overlays: {
-
-                    rainradar: {
-                        name: 'ข้อมูลฝนจาก Radar',
-                        type: 'wms',
-                        visible: false,
-                        url: 'http://cgi.uru.ac.th/gs-rain/ows?',
+                    cri: {
+                        name: 'ข้อมูลฝนจาก Radar: เชียงราย',
+                        type: 'imageOverlay',
+                        url: 'http://rain.tvis.in.th/output/CRI.png',
+                        bounds: [[22.305437,102.143387], [17.596297,97.611690]],
+                        //bounds: imageBounds,
                         layerParams: {
-                            layers: 'rain:phs240_latest',
-                            format: 'image/png',
-                            transparent: true,
-                            zIndex: 2
+                            noWrap: true,
                         }
                     },
+                    kkn: {
+                        name: 'ข้อมูลฝนจาก Radar: ขอนแก่น',
+                        type: 'imageOverlay',
+                        url: 'http://rain.tvis.in.th/output/KKN.png',
+                        bounds: [[18.793550,105.026265], [14.116192,100.541459]],
+                        //bounds: imageBounds,
+                        layerParams: {
+                            noWrap: true,
+                        }
+                    },
+                    pl: {
+                        name: 'ข้อมูลฝนจาก Radar: พิษณุโลก',
+                        type: 'imageOverlay',
+                        url: 'http://rain.tvis.in.th/output/PHS.png',
+                        bounds: [[19.094393,102.475537], [14.411350,97.983591]],
+                        //bounds: imageBounds,
+                        layerParams: {
+                            noWrap: true,
+                        }
+                    },
+                    bkk: {
+                        name: 'ข้อมูลฝนจาก Radar: หนองแขม',
+                        type: 'imageOverlay',
+                        url: 'http://rain.tvis.in.th/output/NongKham.png',
+                        bounds: [[15.09352819610486,101.7458188486135], [12.38196058009694,98.97206140040996]],
+                        //bounds: imageBounds,
+                        layerParams: {
+                            noWrap: true,
+                        }
+                    },
+                    // rainradar: {
+                    //     name: 'ข้อมูลฝนจาก Radar',
+                    //     type: 'wms',
+                    //     visible: false,
+                    //     url: 'http://cgi.uru.ac.th/gs-rain/ows?',
+                    //     layerParams: {
+                    //         layers: 'rain:phs240_latest',
+                    //         format: 'image/png',
+                    //         transparent: true,
+                    //         zIndex: 2
+                    //     }
+                    // },
                     rainnow: {
                         name: 'ตำแหน่งวัดปริมาณน้ำฝนรายวัน',
                         type: 'wms',
@@ -170,13 +215,13 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                 }
             }
         });
-        
+
         // load Radar image 
-        $scope.loadRadarImg = function() {
+        $scope.loadRadarImg = function () {
             var link = 'http://cgi.uru.ac.th/udsafe/loadRadarImg.php';
             //$http.post(link, {username : $scope.data.farmer_fname})
             $http.post(link)
-                .then(function(res) {
+                .then(function (res) {
                     $scope.response = res.data;
                     console.log(res.data);
                 });
@@ -244,7 +289,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
 
     })
 
-    .controller('rainformCtrl', function ($scope,  $http, $timeout, rformService) {
+    .controller('rainformCtrl', function ($scope, $http, $timeout, rformService) {
 
 
         $scope.getAmp = function () {
@@ -281,10 +326,10 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
                 })
         };
 
-        
+
 
         // insert data 
-        $scope.insertData = function() {
+        $scope.insertData = function () {
 
             $scope.selectedData = {
                 // amp: $scope.dat.amp.amp_name,
@@ -298,14 +343,14 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
             var link = 'http://cgi.uru.ac.th/udsafe/insert2db.php';
             //$http.post(link, {username : $scope.data.farmer_fname})
             $http.post(link, $scope.selectedData)
-                .then(function(res) {
+                .then(function (res) {
                     $scope.response = res.data;
                     console.log(res.data);
 
                     // refesh layer
-                    $timeout(function() {
-                         $scope.getClear();
-                         //console.log('refreshed');
+                    $timeout(function () {
+                        $scope.getClear();
+                        //console.log('refreshed');
                     }, 400);
                 });
         };
@@ -322,10 +367,10 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
             };
         };
 
-        
+
         $scope.dat = {
-            date:  new Date()
-      };
+            date: new Date()
+        };
 
     })
 
