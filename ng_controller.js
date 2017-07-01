@@ -39,7 +39,7 @@ angular.module('app.controller', ['ui-leaflet', 'ui.bootstrap'])
 
         console.log(center.lat + '-' + center.lng);
 
-
+        $scope.today = new Date();
 
         var latlng_topright = '["15.09352819610486,101.7458188486135",  "18.793550,105.026265", "19.094393,102.475537", "22.305437,102.143387"]';
         var latlng_bottomleft = '["12.38196058009694,98.97206140040996","14.116192,100.541459", "14.411350,97.983591",  "17.596297,97.611690"]';
